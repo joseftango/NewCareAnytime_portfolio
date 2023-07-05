@@ -1,3 +1,3 @@
 # NewCareAnytime :
-[<img src="image.png" width="250"/>](./static/img/old_logo.png)
+[<img src="./static/img/old_logo.png" width="250"/>](./static/img/old_logo.png)
 
