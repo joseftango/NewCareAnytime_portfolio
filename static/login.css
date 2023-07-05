@@ -1,0 +1,149 @@
+* {
+	padding: 0px;
+	margin: 0px;
+  	box-sizing: border-box;
+}
+
+body {
+	font-family: "Roboto", sans-serif;
+  	height: 100vh;
+}
+
+.title0 {
+	width: 100%;
+	height: 100px;
+	background-color: gray;
+  	width: 100%;
+}
+.title0 h1 {
+	color: orange;
+  	font-family: 'Dancing Script', cursive;
+	font-size: 55px;
+	float: right;
+  	position: absolute;
+  	top: 20px;
+  	left: 400px;
+}
+
+.logo1 {
+	height: 90px;
+	width: 90px;
+	border-radius: 50%;
+	transform: translate(30px, 5px);
+}
+
+.logo2 {
+	height: 90px;
+	width: 90px;
+	border-radius: 50%;
+  	transform: translate(1133px, 5px);
+}
+
+.container {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	padding: 20px 100px;
+  }
+
+  .container:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: url(img/download.jpg) no-repeat center;
+	background-size: cover;
+	z-index: -1;
+	filter: blur(3px);
+  }
+
+.form {
+	display: flex;
+	flex-direction: column;
+	height: 500px;
+	width: 500px;
+	/*border: 1px solid black;*/
+	align-items: center;
+	margin: auto;
+	margin-top: 50px;
+	background-color: rgba(0, 0, 0, 0.5);
+	box-shadow: inset -5px -5px rgba(0, 0, 0, 0.5);
+	border-radius: 25px;
+	transform: translate(-100px, 0px)
+}
+
+.form h1 {
+	color: aqua;
+	font-size: 2rem;
+	border-bottom: 4px solid aqua;
+	margin: 50px;
+}
+
+.box {
+	padding: 12px;
+	margin: 12px;
+	width: 65%;
+	border: none;
+	outline: none;
+	border-radius: 20px;
+	background-color: rgba(0, 0, 0, 0.5);
+	box-shadow: inset -3px -3px rgba(0, 0, 0, 0.5);
+	color: white;
+	font-size: 1rem;
+}
+
+#submit {
+	padding: 10px 20px;
+	margin-top: 50px;
+	width: 50%;
+	background-color: rgba(0, 0, 0, 0.5);
+	box-shadow: inset -3px -3px rgba(0, 0, 0, 0.5);
+	color: aqua;
+	border: none;
+	outline: none;
+	border-radius: 20px;
+	font-size: 1rem;
+	font-weight: 700;
+}
+
+#submit:hover {
+	cursor: pointer;
+	background-color: gray;
+	color: black;
+}
+
+.end {
+	display: inline-block;
+	color: cadetblue;
+	margin-top: 20px;
+	font-size: 16px;
+}
+
+.my_message {
+	margin-top: 10px;
+	font-size: 16px;
+	font-family: cursive;
+	color: red;
+	background-color:gray;
+	border-radius: 5px;
+}
+
+.container .back {
+	width: 200px;
+	height: 30px;
+	display: inline-block;
+	color: grey;
+	background-color: burlywood;
+	font-size: 27px;
+	font-weight: bold;
+	text-decoration: none;
+	margin-right: -40px;
+	transform: translate(0px, -120px);
+	border-radius: 7px;
+	line-height: 30px;
+  }

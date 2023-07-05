@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="shortcut icon" type="x-icon" href="{% static 'img/old_logo.png' %}">
+<link rel="stylesheet" href="{% static 'register.css' %}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Kalam:wght@300;700&family=Manrope:wght@300&family=PT+Serif:ital,wght@1,700&family=Roboto:wght@100;500&display=swap" rel="stylesheet">
+<title>Careseeker</title>
+
+
+</head>
+<body>
+	
+<div class="title0">
+		<img src="{% static 'img/old_logo.png' %}" alt="old" class="logo1">
+	<h1>Register in NewCareAnytime</h1>
+		<img src="{% static 'img/old_logo.png' %}" alt="old" class="logo2">
+</div>
+
+
+<div class="container">
+  <a href="{% url 'home' %}" class="back">&#x2190 back home</a>
+  <div class="content-box">
+    <div class="left1"></div>
+    <div class="right">
+      <h2>Careseeker sign up</h2>
+      <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+      <input name="firstname" type="text" class="field" placeholder="*firstname"/>
+      <input name="lastname" type="text" class="field" placeholder="*lastname"/>
+      <input name="age" type="number" class="field" placeholder="*age"/>
+      <input name="gender" type="text" class="field" placeholder="*gender"/>
+      <input name="email" type="email" class="field" placeholder="*email"/>
+      <input name="phone" type="tel" class="field" placeholder="*phone number"/>
+      <input name="state" type="text" class="field" placeholder="*state">
+      <input name="city" type="text" class="field" placeholder="*city">
+      <input name="address" type="text" class="field" placeholder="*address"/>
+      <input name="password1" type="password" class="field" placeholder="*password"/>
+      <input name="password2" type="password" class="field" placeholder="*confirm your password"/>
+      <textarea name="order" class="field" placeholder="your order" cols="60" rows="3"></textarea>
+      <button id="choose" name="image" class="field" onclick="document.getElementById('file').click()" type="button">choose a photo</button>
+      <input id="file" name="image" type="file" class="field" accept="image/*" value="choose a photo" />
+      <button type="submit" class="btn">Sign up</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<script>
+
+</script>
+
+</body>
+</html>

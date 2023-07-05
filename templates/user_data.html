@@ -1,0 +1,110 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link rel="shortcut icon" type="x-icon" href="{% static 'img/old_logo.png' %}">
+	<link rel="stylesheet" href="{% static 'user_data.css' %}">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Kalam:wght@300;700&family=Manrope:wght@300&family=PT+Serif:ital,wght@1,700&family=Roboto:wght@100;500&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Acme&family=Courgette&family=Dancing+Script:wght@500;700&family=Kalam:wght@300;700&family=Manrope:wght@300&family=PT+Serif:ital,wght@1,700&family=Roboto+Slab:wght@500&family=Roboto:wght@100;500&family=Sanchez:ital@1&family=Source+Serif+4:wght@500&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Acme&family=Courgette&family=Dancing+Script:wght@500;700&family=Kalam:wght@300;700&family=Manrope:wght@300&family=PT+Serif:ital,wght@1,700&family=Roboto+Slab:wght@500&family=Roboto:wght@100;500&family=Sanchez:ital@1&family=Source+Serif+4:wght@500&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Acme&family=Courgette&family=Dancing+Script:wght@500;700&family=Kalam:wght@300;700&family=Manrope:wght@300&family=PT+Serif:ital,wght@1,700&family=Roboto+Slab:wght@500&family=Roboto:wght@100;500&family=Sanchez:ital@1&family=Source+Serif+4:wght@500&display=swap" rel="stylesheet">
+	<title>Careseekers_page</title>
+
+</head>
+<body>
+
+	<div class="title0">
+		<img src="{% static 'img/old_logo.png' %}" alt="old" class="logo1">
+	  	<h1>Your Profile</h1>
+		<img src="{% static 'img/old_logo.png' %}" alt="old" class="logo2">
+	</div>
+
+
+
+	<div class="container">
+
+	<a href="{% url 'all_members' %}" class="back">&#x2190 previous page</a>
+
+	<div class="user_info">
+		<img src="{{ user.image.url }}" alt="photo"/>
+		<div class="border">
+
+		<div class="arrange">
+			<h1 class="first-h1">Name</h1>
+			<h1 class="second-h1">{{ user.firstname }} {{ my_user.lastname }}</h1>
+		</div>
+		<div class="arrange">
+		<h1 class="first-h1">Age</h1>
+		<h1 class="second-h1">{{ my_user.age }}</h1>
+		</div>
+
+		<div class="arrange">
+			<h1 class="first-h1">Phone</h1>
+			<h1 class="second-h1">{{ my_user.phone }}</h1>
+		</div>
+
+		<div class="arrange">
+			<h1 class="first-h1">email</h1>
+			<h1 class="second-h1">{{ my_user.email }}</h1>
+		</div>
+
+		{% if user.user_type == 'careseeker'%}
+
+		<div class="arrange">
+			<h1 class="first-h1">State</h1>
+			<h1 class="second-h1">{{ my_user.state }}</h1>
+		</div>
+
+		<div class="arrange">
+			<h1 class="first-h1">City</h1>
+			<h1 class="second-h1">{{ my_user.city }}</h1>
+		</div>
+
+
+		<div class="arrange">
+			<h1 class="first-h1">Address</h1>
+			<h1 class="second-h1">{{ my_user.address }}</h1>
+		</div>
+
+		<div class="arrange">
+			<h1 class="first-h1" id="last_h1">Order</h1>
+			<h1 class="second-h1" id="last_h1">{{ my_user.order }}</h1>
+		</div>
+
+
+		{% else %}
+
+		<div class="arrange">
+			<h1 class="first-h1">Job</h1>
+			<h1 class="second-h1">{{ my_user.profession }}</h1>
+		</div>
+
+		<div class="arrange">
+			<h1 class="first-h1" id="last_h1">Topic</h1>
+			<h1 class="second-h1" id="last_h1">{{ my_user.objective }}</h1>
+		</div>
+		{% endif %}
+
+		</div>
+
+	</div>
+
+
+	</div>
+
+
+
+</body>
+</html>

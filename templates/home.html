@@ -1,0 +1,98 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>NewCareAnytime</title>
+	<link rel="shortcut icon" type="x-icon" href="{% static 'img/old_logo.png' %}">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Kalam:wght@300;700&family=Manrope:wght@300&family=PT+Serif:ital,wght@1,700&family=Roboto:wght@100;500&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Kalam:wght@300;700&family=Manrope:wght@300&family=PT+Serif:ital,wght@1,700&family=Roboto:wght@100;500&family=Sanchez:ital@1&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+	<link rel="stylesheet" href="{% static 'home.css' %}">
+
+
+</head>
+<body>
+<header>
+		<a href="{% url 'home' %}"><img src="{% static 'img/old_logo.png' %}" class="icon" alt="logo"/></a>
+		<a href="{% url 'home' %}" class="topic">NewCareAnytime</a>
+</header>
+	<nav>
+		<ul>
+			<li><a id="item" href="{% url 'home' %}" class="active" href="#">Home</a></li>
+			<li><a id="item" href="{% url 'about_us' %}">About us</a></li>
+			<li><a id="item" href="{% url 'services' %}">Services</a></li>
+			{% if not request.user.is_authenticated %}
+			<li class="reg">
+				<a id="item" target="_blank">Register</a>
+				<ul class="dropdown">
+					<li><a id="item" href="{% url 'caretaker_register' %}">Caretakers</a></li>
+					<li><a id="item" href="{% url 'careseeker_register' %}">Careseekers</a></li>
+				</ul>
+			</li>
+			{% else %}
+			<li><a id="item" href="{% url 'all_members' %}">Your Views</a></li>
+			{% endif %}
+
+			{% if request.user.is_authenticated %}
+				<li><a id="item" href="{% url 'logout_view' %}">Log out</a></li>
+			{% else %}
+				<li><a id="item" href="{% url 'login_view' %}">Log in</a></li>
+			{% endif %}
+		</ul>
+	</nav>
+	<main>
+		<div class="one"></div>
+		<div class="two">
+			<h1 class="description">Welcome to NewCareAnytime!<br>here you can deal very fast with our Caretakers for your babies or your old parents when you want and where you choose your family are a real treasure so keep them under supervision<br>gain peace of mind !</h1>
+		</div>
+		<div class="three"></div>
+	</main>
+	<footer class="footer">
+		<div class="waves">
+			<div class="wave" id="wave1"></div>
+			<div class="wave" id="wave2"></div>
+			<div class="wave" id="wave3"></div>
+			<div class="wave" id="wave4"></div>
+		</div>
+		<div class="foot-container">
+				<div class="footer-col" id="first">
+					<h4>company :</h4>
+					<ul>
+						<li><a href="{% url 'home' %}">Home</a></li>
+						<li><a href="{% url 'about_us' %}">about us</a></li>
+						<li><a href="{% url 'services' %}">services</a></li>
+						<li><a href="">feedback</a></li>						
+					</ul>
+				</div>
+				<div class="footer-col" id="second">
+					<h4>contact us :</h4>
+					<ul>
+						<li><a href="https://www.facebook.com/">facebook: NewCareAnytime</a></li>
+						<li><a href="">whatsaap: +545 995 122 786</a></li>
+						<li><a href="">telegram: +545 995 122 786</a></li>
+						<li><a href="https://mail.yahoo.com/">email: gadour@yahoo.com</a></li>
+					</ul>
+				</div>
+				<div class="footer-col">
+					<h4>follow us :</h4>
+						<li><a href="https://www.facebook.com/"><i id="third" class="fab fa-facebook-f"></i></a></li>
+						<li><a href="https://twitter.com/"><i id="third" class="fab fa-twitter"></i></a></li>
+						<li><a href="https://www.instagram.com/"><i id="third" class="fab fa-instagram"></i></a></li>
+						<li><a href="https://www.instagram.com/"><i id="third" class="fab fa-linkedin-in"></i></a></li>
+				</div>
+		</div>
+		<p class="final">&#9400; All Rights Reserved by the owner Yousef Tangour</p>
+
+	</footer>
+	
+</body>
+</html>

@@ -1,0 +1,109 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link rel="shortcut icon" type="x-icon" href="img/old_logo.png">
+	<link rel="stylesheet" href="{% static 'all_careseekers.css' %}"/>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Kalam:wght@300;700&family=Manrope:wght@300&family=PT+Serif:ital,wght@1,700&family=Roboto:wght@100;500&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Acme&family=Dancing+Script:wght@500;700&family=Kalam:wght@300;700&family=Manrope:wght@300&family=PT+Serif:ital,wght@1,700&family=Roboto:wght@100;500&family=Sanchez:ital@1&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Acme&family=Courgette&family=Dancing+Script:wght@500;700&family=Kalam:wght@300;700&family=Manrope:wght@300&family=PT+Serif:ital,wght@1,700&family=Roboto+Slab:wght@500&family=Roboto:wght@100;500&family=Sanchez:ital@1&family=Source+Serif+4:wght@500&display=swap" rel="stylesheet">
+	<title>Careseekers_page</title>
+	
+
+</head>
+<body>
+
+	<div class="title0">
+		<img src="{% static 'img/old_logo.png' %}" alt="old" class="logo1">
+	<h1>find your Careseeker</h1>
+		<img src="{% static 'img/old_logo.png' %}" alt="old" class="logo2">
+	</div>
+
+	<div class="logout_account">
+		<div class="logout">
+			<a href="{% url 'home' %}"><img src="{% static 'img/home.png' %}" alt=""></a>
+			<a href="{% url 'home' %}"><h1>Home</h1></a>
+		</div>
+
+		<div class="account">
+			<a href="{% url 'user_profile' %}"><img src="{% static 'img/account.png' %}" alt="account"/></a>
+			<a href="{% url 'user_profile' %}"><h1>profile</h1></a>
+		</div>
+		<div class="logout">
+			<a href="{% url 'logout_view' %}"><img src="{% static 'img/signout.png' %}" alt=""></a>
+			<a href="{% url 'logout_view' %}"><h1>Log out</h1></a>
+		</div>
+
+	</div>
+
+
+	<div class="container">
+		{% for user in all_users %}
+		<div class="user_info">
+			<img src="{{ user.image.url }}" alt="photo"/>
+			<div class="border">
+
+			<div class="arrange">
+				<h1 class="first-h1">Name</h1>
+				<h1 class="second-h1">{{ user.firstname }} {{ user.lastname }}</h1>
+			</div>
+			<div class="arrange">
+			<h1 class="first-h1">age</h1>
+			<h1 class="second-h1">{{ user.age }}</h1>
+			</div>
+	
+			<div class="arrange">
+				<h1 class="first-h1">phone</h1>
+				<h1 class="second-h1">{{ user.phone }}</h1>
+			</div>
+	
+			<div class="arrange">
+				<h1 class="first-h1">email</h1>
+				<h1 class="second-h1">{{ user.email }}</h1>
+			</div>
+	
+	
+	
+			<div class="arrange">
+				<h1 class="first-h1">State</h1>
+				<h1 class="second-h1">{{ user.state }}</h1>
+			</div>
+
+			<div class="arrange">
+				<h1 class="first-h1">City</h1>
+				<h1 class="second-h1">{{ user.city }}</h1>
+			</div>
+
+			<div class="arrange">
+				<h1 class="first-h1">Address</h1>
+				<h1 class="second-h1">{{ user.address }}</h1>
+			</div>
+
+
+	
+			<div class="arrange">
+				<h1 class="first-h1" id="last_h1">Order</h1>
+				<h1 class="second-h1" id="last_h1">{{ user.order }}</h1>
+			</div>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+*************************** How to use Nginx ******************************
+1/ update and install it:
+$ sudo apt update
+$ sudo apt install nginx
+
+2/ check the firewall status and Available applications in nginx :
+$ sudo ufw status    (by default you will find inactive)
+$ sudo ufw app list
+
+3/ allowing connection to go through those ports :
+$ sudo ufw allow 'Nginx HTTP'
+
+4/ enable firewall:
+$ sudo ufw enable
+

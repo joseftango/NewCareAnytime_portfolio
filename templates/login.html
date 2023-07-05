@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="x-icon" href="{% static 'img/old_logo.png' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Kalam:wght@300;700&family=Manrope:wght@300&family=PT+Serif:ital,wght@1,700&family=Roboto:wght@100;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'login.css' %}">
+    <title>User Login</title>
+</head>
+<body>
+    <div class="title0">
+        <img src="{% static 'img/old_logo.png' %}" alt="old" class="logo1">
+        <h1>Sign In NewCareAnytime</h1>
+        <img src="{% static 'img/old_logo.png' %}" alt="old" class="logo2">
+    </div>
+    <div class="container">
+        <a href="{% url 'home' %}" class="back">&#x2190 Home page</a>
+
+        {% if user.is_authenticated %}
+            {% if user.careseeker %}
+                <h2>You are already signed in as a careseeker.</h2>
+                <br>
+            {% elif user.caretaker %}
+                <h2>You are already signed in as a caretaker.</h2>
+                <br>
+            {% endif %}
+            <a href="{% url 'home' %}">Go to home</a>
+            <br>
+            <a href="{% url 'logout_view' %}">Sign out</a>
+        {% else %}
+            <form class="form" action="{% url 'login_view' %}" method="POST">
+                <h1>User Login</h1>
+                {% csrf_token %}
+                <input type="email" name="email" class="box" placeholder="Enter your email">
+                <input type="password" name="password" class="box" placeholder="Enter your password">
+                <input id="submit" type="submit" value="LOG IN">
+                <a class="end" href="{% url 'home' %}">Don't have an account? Sign up</a>
+                <h4 class="my_message">
+                    {% for message in messages %}
+                        {{ message }}
+                    {% endfor %}
+                </h4>
+            </form>
+        {% endif %}
+    </div>
+</body>
+</html>

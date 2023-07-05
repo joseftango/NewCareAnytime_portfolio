@@ -1,0 +1,114 @@
+* {
+	padding: 0px;
+	margin: 0px;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Roboto", sans-serif;
+	height: auto;
+}
+
+.title0 {
+	width: 100%;
+	height: 100px;
+	background-color: gray;
+	width: 100%;
+}
+.title0 h1 {
+	color: orange;
+	font-family: 'Roboto Slab', serif;
+	font-size: 55px;
+	float: right;
+	position: absolute;
+	top: 10px;
+	left: 550px;
+}
+
+.logo1 {
+	height: 90px;
+	width: 90px;
+	border-radius: 50%;
+	transform: translate(30px, 5px);
+}
+
+.logo2 {
+	height: 90px;
+	width: 90px;
+	border-radius: 50%;
+	transform: translate(1133px, 5px);
+}
+
+.container {
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	width: 100%;
+	height: auto;
+	padding: 10px 10px;
+  }
+  
+.container:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: url(img/bellar.jpg) no-repeat center;
+	background-size: cover;
+	z-index: -1;
+  }
+
+  .content {
+	width: 900px;
+	height: auto;
+	background-color: cadetblue;
+	margin-top: 10px;
+	border-radius: 10px;
+  }
+
+  .content h1 {
+	width: auto;
+	color: chocolate;
+	font-size: 35px;
+	font-weight: 600;
+	text-align: start;
+	margin: 25px;
+	font-family: Arial, Helvetica, sans-serif;
+	padding-right: 30px;
+	
+  }
+
+  .content p {
+	width: auto;
+	color: purple;
+	font-size: 22px;
+	font-weight: 500;
+	text-align: start;
+	letter-spacing: 1px;
+	margin: 20px;
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: aqua;
+	border-radius: 10px;
+	padding: 10px;
+  }
+
+  .back {
+	width: 200px;
+	height: 35px;
+	display: inline-block;
+	color: grey;
+	background-color: burlywood;
+	font-size: 27px;
+	font-weight: bold;
+	text-decoration: none;
+	margin-right: -40px;
+	transform: translate(-30px, 160px);
+	border-radius: 10px;
+  }
+  
+  .back:hover {
+	color: orchid;
+  }

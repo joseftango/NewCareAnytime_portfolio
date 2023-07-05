@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="shortcut icon" type="x-icon" href="{% static 'img/old_logo.png' %}">
+<link rel="stylesheet" href="{% static 'register.css' %}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Kalam:wght@300;700&family=Manrope:wght@300&family=PT+Serif:ital,wght@1,700&family=Roboto:wght@100;500&display=swap" rel="stylesheet">
+<title>Caretaker</title>
+
+
+</head>
+<body>
+
+<div class="title0">
+		<img src="{% static 'img/old_logo.png' %}" alt="old" class="logo1">
+	  <h1>Register in NewCareAnytime</h1>
+		<img src="{% static 'img/old_logo.png' %}" alt="old" class="logo2">
+</div>
+
+
+<div class="container">
+  <a href="{% url 'home' %}" class="back">&#x2190 back home</a>
+  <div class="content-box">
+    <div class="left"></div>
+    <div class="right">
+      <h2>Caretaker sign up</h2>
+      <form action="{% url 'caretaker_register' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+      <input name="firstname" type="text" class="field" placeholder="*firstname" required />
+      <input name="lastname" type="text" class="field" placeholder="*lastname" required />
+      <input name="gender" type="text" class="field" placeholder="*gender" required />
+      <input name="age" type="number" class="field" placeholder="*age" required />
+      <input name="email" type="email" class="field" placeholder="*email" required />
+      <input name="phone" type="number" class="field" placeholder="*phone number" required />
+      <input name="experience" type="number" class="field" min="0" max="5" placeholder="*experience: 0 - 5" />
+      <input name="ID_card" type="number" class="field" placeholder="*ID card number" required />
+      <input name="profession" type="text" class="field" placeholder="profession"/>
+      <input name="password1" type="password" class="field" placeholder="*password" required />
+      <input name="password2" type="password" class="field" placeholder="*confirm your password" required />
+      <textarea name="objective" class="field" placeholder="objective" cols="60" rows="3"></textarea>
+      <button id="choose" name="image" class="field" onclick="document.getElementById('file').click()" type="button">choose a photo</button>
+      <input id="file" name="image" type="file" class="field" accept="image/*" value="choose a photo" required />
+      <button type="submit" class="btn">Sign up</button>
+      </form>
+        {% for message in messages %}
+        <h4 class="warning_message">
+          {{message}}
+        </h4>
+        {% endfor %}
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+</body>
+</html>
