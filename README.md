@@ -1,4 +1,3 @@
 # NewCareAnytime :
-![image](my_portfolio/static/img/old_logo.png "photo")
+![image](home/josef/NewCareAnytime_portfolio/static/img/old_logo.png)
 
-# NewCareAnytime_portfolio
