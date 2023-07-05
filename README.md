@@ -1,3 +1,10 @@
 # NewCareAnytime :
-[<img src="./static/img/old_logo.png" width="250"/>](./static/img/old_logo.png)
+![photo](./static/img/old_logo.png)
+
+<style type="text/css">
+	img {
+		width: 200x;
+		height: 200px;
+	}
+</style>
 
