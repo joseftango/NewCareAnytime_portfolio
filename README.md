@@ -1,6 +1,6 @@
 # NewCareAnytime project :
 <img src="./static/img/old_logo.png" alt="Markdown Monster icon"
-     style="width: 800px; height: 500px"/>
+     style="width: 600px; height: 500px"/>
 
 # Introduction :
 there are a lot of people with a special needs including the olds and the disables . they deserve various services that fulfills their needs
